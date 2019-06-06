@@ -1,7 +1,9 @@
 ---
-title: Welcome
+title: Welcome!
+date: 2019-06-01 00:00:00
 ---
-[CSGO Japan League UTAGE](https://utage-csgo.com/) 公式技術ブログ"UTAGE TECH"へようこそ！
+
+[CSGO Japan League UTAGE](https://utage-csgo.com/) 公式技術ブログ"UTAGE-TECH"へようこそ！
 本ブログはUTAGEの技術スタッフが中心となり、CSGOや配信に関連した技術の共有・公開などを目的としたブログです。
 
 
