@@ -5,18 +5,19 @@
   
 
   
-  <title>UTAGE-Tech</title>
+  <title>GOTV+について | UTAGE-Tech</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="CSGO Japan League UTAGE Technical Blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="UTAGE-Tech">
-<meta property="og:url" content="http://tech.utage-csgo.com/index.html">
+  <meta name="description" content="こんにちは！テクニカルエンジニアのFlowingです。皆さんはメジャー大会のGOTVを見た事がありますか？実は、メジャー大会のGOTVは通常のGOTVではなく、GOTV+(Official GOTV+)という特別なGOTVが使われています。今回これを公開し、誰でも使えるようにしたバージョンを用意したので、簡単に説明して見ようと思います。 純正GOTVの説明始めに、GOTVはゲームサーバー内の情報を">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GOTV+について">
+<meta property="og:url" content="http://tech.utage-csgo.com/2019/06/06/gotv-plus/index.html">
 <meta property="og:site_name" content="UTAGE-Tech">
-<meta property="og:description" content="CSGO Japan League UTAGE Technical Blog">
+<meta property="og:description" content="こんにちは！テクニカルエンジニアのFlowingです。皆さんはメジャー大会のGOTVを見た事がありますか？実は、メジャー大会のGOTVは通常のGOTVではなく、GOTV+(Official GOTV+)という特別なGOTVが使われています。今回これを公開し、誰でも使えるようにしたバージョンを用意したので、簡単に説明して見ようと思います。 純正GOTVの説明始めに、GOTVはゲームサーバー内の情報を">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-06-08T14:30:27.844Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="UTAGE-Tech">
-<meta name="twitter:description" content="CSGO Japan League UTAGE Technical Blog">
+<meta name="twitter:title" content="GOTV+について">
+<meta name="twitter:description" content="こんにちは！テクニカルエンジニアのFlowingです。皆さんはメジャー大会のGOTVを見た事がありますか？実は、メジャー大会のGOTVは通常のGOTVではなく、GOTV+(Official GOTV+)という特別なGOTVが使われています。今回これを公開し、誰でも使えるようにしたバージョンを用意したので、簡単に説明して見ようと思います。 純正GOTVの説明始めに、GOTVはゲームサーバー内の情報を">
   
     <link rel="alternate" href="/atom.xml" title="UTAGE-Tech" type="application/atom+xml">
   
@@ -67,9 +68,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-gotv-plus" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-gotv-plus" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/06/06/gotv-plus/" class="article-date">
   <time datetime="2019-06-06T08:52:36.000Z" itemprop="datePublished">2019-06-06</time>
@@ -82,8 +81,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/06/gotv-plus/">GOTV+について</a>
+    <h1 class="article-title" itemprop="name">
+      GOTV+について
     </h1>
   
 
@@ -134,109 +133,19 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-utage-broadcast" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/06/06/utage-broadcast/" class="article-date">
-  <time datetime="2019-06-06T08:52:36.000Z" itemprop="datePublished">2019-06-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/06/utage-broadcast/">UTAGE BROADCASTについて</a>
-    </h1>
+    <a href="/2019/06/06/utage-broadcast/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">UTAGE BROADCASTについて</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>こんにちは！テクニカルエンジニアのFlowingです。<br>突然ですが皆さんは<a href="https://twitch.tv/utage_broadcast/" target="_blank" rel="noopener">UTAGE BROADCSAT</a>についてご存知でしょうか？<br>このサービスはUTAGEの予選試合を自動的に<a href="https://twitch.tv/" target="_blank" rel="noopener">Twitch.tv</a>へ配信するサービスです。<br>ミラー配信も許可しているため、一か月に行われる宴の試合を簡単に観戦・実況することが出来ます！</p>
-<p>今回は、このサービスの構成・仕組みや、技術的な部分について説明して行こうと思います。</p>
-<h3 id="企画段階"><a href="#企画段階" class="headerlink" title="企画段階"></a>企画段階</h3><p>UTAGE BROADCASTは、数あるUTAGEの予選を誰でも簡単に観戦でき、ミラー配信を行えるシステムとして開発しました。<br>その為手動での操作を可能な限り省き、メイン部分である配信ソフトウェアの操作・CSGOサーバーへの接続は全て全自動で行えるよう構成しました。<br>そのため、これまで手動で行っていた作業をどこまで自動化出来るかが構築時の焦点となりました。</p>
-<h3 id="構成"><a href="#構成" class="headerlink" title="構成"></a>構成</h3><p>バックエンド部分はTypeScript(NodeJS)で記述してあります。<br>最初は純正NodeJSで記述していたのですが、実行時エラーが発生すると配信垂れ流しになってしまう危険性を孕んでいた為、事前コンパイルがあるTypeScriptを選びました。<br>フロントエンドはjQueryで記述してありますが、フロントエンドは後述する”Project Talos”の時しか公開していないので実質サービスの根幹には関わっていないと考えて構いません。</p>
-<p>バックエンド側の処理としては、NodeJSに備わっているexpressモジュールを使いHTTPサーバーを立ち上げ、REST API経由で様々な操作を行えます。<br>CSGO側の状況確認は<a href="https://developer.valvesoftware.com/wiki/Counter-Strike:_Global_Offensive_Game_State_Integration" target="_blank" rel="noopener">GameStateIntegration</a>(以下GSI)とexpressを使い、CSGOへのコマンド送信は<a href="https://github.com/advancedfx/advancedfx" target="_blank" rel="noopener">HLAE</a>のコマンドとwebsocketサーバーをを活用する事で実装しています。<br>配信ソフトへの操作制御は、<a href="https://github.com/Palakis/obs-websocket" target="_blank" rel="noopener">obs-websocket</a>,<a href="https://github.com/haganbmj/obs-websocket-js" target="_blank" rel="noopener">obs-websocket-js</a>を使っています。<br>因みにvmixの方がREST APIが使える為より直感的に操作を行えそうな印象はあったのですが、コストの関係もありOBSに落ち着きました。</p>
-<p>上記三つの技術を組み合わせ、「buytimeになったらエフェクト作動」や、「warmup時はシーンを変える」などの制御を行っています。</p>
-<p>構築自体はは約二週間程度で動くレベルまで到達しました(その後Twitchチャンネルの取得・試運転などを入れると本番運用までは一か月程度かかりました)。</p>
-<h3 id="構築"><a href="#構築" class="headerlink" title="構築"></a>構築</h3><p>試合サーバーののホスティングサービスである”Project Hypnos”のコードを少し改造し、サーバー起動時にHTTPリクエストを送れるようにしました。(Hypnosの技術説明記事もいつか公開します。お楽しみに！)<br>また、REST APIを公開するのはセキュリティ面に不安があった為、上記HypnosとUTAGE BROADCASTを同一PCに共存させ、localhost経由でRESTを叩けるようにしました。</p>
-<p>各ソフトウェアが踏む手順としては以下の通りです。</p>
-<ol>
-<li>ユーザーが”.create-get5”と発言し、Hypnosがサーバー作成準備に入る。</li>
-<li>Hypnosがリーグサーバーが作成すると、UTAGE BROADCASTのREST APIへPOSTでIP,ポート,パスワードが入る(localhost経由)。この時点で配信が開始される。</li>
-<li>UTAGE BROADCAST側でCSGOを起動、起動オプションに<code>+connect ip</code>コマンドを挿入し、起動と同時にサーバーに接続するように。</li>
-<li>CSGOクライアントとUTAGE BROADCASTをHLAEとGSI経由でリンク。OBSへの操作を行い始める。</li>
-<li>CSGOクライアントの状況に応じて様々なアクションが実行される。</li>
-<li>試合終了を検知すると自動的にCSGOがシャットダウンされ、配信が終了する。</li>
-</ol>
-<p>以上がおおまかな流れです。</p>
-<h3 id="リリース"><a href="#リリース" class="headerlink" title="リリース"></a>リリース</h3><p>リリースする前に、”Project Talos”という名前で、オンラインでdemoを見れるサービスという体でサービスを仮公開しました。<br>これはngrok.io 経由でdemファイルをアップロードし、アップロードを検知したらdemファイルを再生するごく簡単なシステムです。<br>メイン部分(CSGO・配信ソフトの制御)は殆ど書き換える必要なく使いまわせたため、このサービスをUTAGE BROADCASTのベータ版として仮運用することにしました。</p>
-<p>予選開始期間一週間前になり、前述した”Project Talos”ではなく、直接GOTVの試合を配信できるサービスをして”UTAGE BROADCAST”の発表・仮運用を開始しました。<br>これはUTAGE Discordの鯖レンタルチャンネルから起動されたGOTVを自動的に観戦するサービスです(これは告知が前後した関係と、戦術のリークにより不評を招いた為、想定よりも早くテストを終了しました)。</p>
-<p>予選開始一日目にはサーバートラブルがありうまく作動しませんでしたが、2日目には通常通り稼働していました。</p>
-<h3 id="まとめ"><a href="#まとめ" class="headerlink" title="まとめ?"></a>まとめ?</h3><p>以上がUTAGE BROADCASTのおおまかな技術説明です。<br>技術関連の記事を書くのは初めてなので拙い部分もあると思いますが何か役に立てれば幸いです！<br>良かったら”<a href="https://twitch.tv/utage_broadcast/" target="_blank" rel="noopener">UTAGE BROADCAST</a>“、使って頂けたら嬉しいです。<br>以上、<a href="https://twitter.com/FlowingSPDG" target="_blank" rel="noopener">FlowingSPDG</a>によるUTAGE BROADCASTの技術説明でした！</p>
-<h2 id="WE-WANT-YOU"><a href="#WE-WANT-YOU" class="headerlink" title="WE WANT YOU!"></a>WE WANT YOU!</h2><p>UTAGE-Techではエンジニア・デザイナー・ライターを募集中です！<br>興味のある方は flowing[a]utage-csgo.com までメール下さいませ！</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://tech.utage-csgo.com/2019/06/06/utage-broadcast/" data-id="cjwnmcx2p00023khrhpvyxp9k" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-  
-    <article id="post-welcome" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/06/01/welcome/" class="article-date">
-  <time datetime="2019-05-31T15:00:00.000Z" itemprop="datePublished">2019-06-01</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/01/welcome/">Welcome!</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="https://utage-csgo.com/" target="_blank" rel="noopener">CSGO Japan League UTAGE</a> 公式技術ブログ”UTAGE-TECH”へようこそ！<br>本ブログはUTAGEの技術スタッフが中心となり、CSGOや配信に関連した技術の共有・公開などを目的としたブログです。</p>
-<h3 id="Contact"><a href="#Contact" class="headerlink" title="Contact"></a>Contact</h3><p>email : flowing[a]utage-csgo.com<br>web : <a href="https://flwoing.tokyo/aboutme" target="_blank" rel="noopener">flowing.tokyo</a></p>
-<h2 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h2><p><a href="https://utage-csgo.com" target="_blank" rel="noopener">UTAGE HP</a><br><a href="https://discord.gg/5NEPXKU" target="_blank" rel="noopener">Discord</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://tech.utage-csgo.com/2019/06/01/welcome/" data-id="cjwnmcx2n00013khraf7waoc9" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
 
 </section>
         
