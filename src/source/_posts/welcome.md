@@ -1,6 +1,7 @@
 ---
 title: Welcome!
 date: 2019-06-01 00:00:00
+author: Flowing
 ---
 
 [CSGO Japan League UTAGE](https://utage-csgo.com/) 公式技術ブログ"UTAGE-TECH"へようこそ！
