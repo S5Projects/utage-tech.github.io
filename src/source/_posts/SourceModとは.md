@@ -3,7 +3,7 @@ title: SourceModとは?
 author: Eru
 ---
 
-こんにちは！EruFFA AdminのEruです。
+こんにちは！EruFFA Adminの[Eru](https://twitter.com/eru_java)です。
 皆さんはUTAGEの試合を見たことはありますか？
 チャット欄に出てくる試合の情報や試合を円滑に進めるために
 SourceModというサードパーティ制のサーバーアドオンが使用されています。
@@ -88,5 +88,5 @@ SourceModはCSGOでサーバーを稼働させるには便利なアドオンで�
 コミュニティが少ないのが現状です。
 これらのことから今回の記事を作成しています。
 もし、興味を持ってもらえたら次の記事でもお会いしましょう！
-以上、EruによるSourceModの導入方法の説明でした！
+以上、[Eru](https://twitter.com/eru_java)によるSourceModの導入方法の説明でした！
 
