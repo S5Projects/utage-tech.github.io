@@ -6,7 +6,7 @@ author: Flowing
 ---
 
 こんにちは！テクニカルエンジニアのFlowingです。
-突然ですが皆さんは[UTAGE BROADCSAT](https://twitch.tv/utage_broadcast/)についてご存知でしょうか？
+突然ですが皆さんは[UTAGE BROADCAST](https://twitch.tv/utage_broadcast/)についてご存知でしょうか？
 このサービスはUTAGEの予選試合を自動的に[Twitch.tv](https://twitch.tv/)へ配信するサービスです。
 ミラー配信も許可しているため、一か月に行われる宴の試合を簡単に観戦・実況することが出来ます！
 
