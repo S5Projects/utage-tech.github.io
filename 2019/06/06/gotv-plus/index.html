@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="UTAGE-Tech">
 <meta property="og:description" content="こんにちは！テクニカルエンジニアのFlowingです。皆さんはメジャー大会のGOTVを見た事がありますか？実は、メジャー大会のGOTVは通常のGOTVではなく、GOTV+(Official GOTV+)という特別なGOTVが使われています。今回これを公開し、誰でも使えるようにしたバージョンを用意したので、簡単に説明して見ようと思います。 純正GOTVの説明始めに、GOTVはゲームサーバー内の情報を">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-08T14:30:27.844Z">
+<meta property="og:updated_time" content="2019-06-11T09:32:12.872Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GOTV+について">
 <meta name="twitter:description" content="こんにちは！テクニカルエンジニアのFlowingです。皆さんはメジャー大会のGOTVを見た事がありますか？実は、メジャー大会のGOTVは通常のGOTVではなく、GOTV+(Official GOTV+)という特別なGOTVが使われています。今回これを公開し、誰でも使えるようにしたバージョンを用意したので、簡単に説明して見ようと思います。 純正GOTVの説明始めに、GOTVはゲームサーバー内の情報を">
@@ -95,14 +95,14 @@
 <ol>
 <li><p>サーバーが重くなる<br>一つ目の問題は、大人数の観戦者が繋ぐとサーバーが重くなることがある事です。<br>サーバーのスペックが良ければ抑制することは出来ますが、完全にラグを消すことは難しく、一定のパフォーマンスを失います。</p>
 </li>
-<li><p>最大人数が64人<br>二つ目の問題は、最大人数が64人です。<br>コミュニティ大会規模であれば問題はありませんが、メジャー大会など数万人が観戦するレベルになるとこれはどう頑張っても収容しきれません。<br>これを解決する為に<code>tv_relay</code>というリレーコマンドがありますが、それを用いても最大人数は64-1人をネズミ算式にしか増やすことが出来ず、更にリレーサーバー自体も一つのサーバーなのでコストパフォーマンスが良くありません。</p>
+<li><p>最大人数が64人<br>二つ目の問題は、最大人数が64人です。<br>コミュニティ大会規模であれば問題はありませんが<br>メジャー大会など数万人が観戦するレベルになるとこれはどう頑張っても収容しきれません。<br>これを解決する為に<code>tv_relay</code>というリレーコマンドがありますが<br>それを用いても最大人数は64-1人をネズミ算式にしか増やすことが出来ず、更にリレーサーバー自体も一つのサーバーなのでコストパフォーマンスが良くありません。</p>
 </li>
-<li><p>回線がシビア<br>三つ目の問題は、同じく通常のゲームサーバーと同じくUDPプロトコルを使用している為パケットロスが発生しやすいです。<br>またVPNなどを利用しても、ヨーロッパ圏など遠隔地のパケットはどうしてもロスが発生してしまい、スムーズに観戦することが出来ません。(2014,2015年頃にメジャー大会を観戦した方ならわかるのではないでしょうか？)</p>
+<li><p>回線がシビア<br>三つ目の問題は、同じく通常のゲームサーバーと同じく<br>UDPプロトコルを使用している為パケットロスが発生しやすいです。<br>またVPNなどを利用しても、ヨーロッパ圏など遠隔地のパケットはどうしてもロスが発生してしまい、スムーズに観戦することが出来ません。(2014,2015年頃にメジャー大会を観戦した方ならわかるのではないでしょうか？)</p>
 </li>
 </ol>
 <p>これら三つの問題を解決するべく生み出されたのが、GOTV+です。</p>
 <p>これは上記三つの問題を完璧に解決しているシステムです。</p>
-<h3 id="GOTV-の説明"><a href="#GOTV-の説明" class="headerlink" title="GOTV+の説明"></a>GOTV+の説明</h3><p>GOTV+は、HTTPの通信技術と、demのシステムをベースに開発されたAPIです。<br>通常のホームページをホストするようなソフトウェア(NodeJS,GoLANG)を使いホストする事が出来るので、多人数から同時に接続されても安定して処理が可能です。(問題1,2解決)<br>また、GOTV+はCDNというHTTP通信のキャッシュ技術を活用することで、世界中どのような場所に居ても安定した通信を行うことが出来ます(GoogleやTwitchがどこからアクセスしても高速で、同じコンテンツを保持しているのと同じような感じです)。<br>これにより、問題3も解決されています。</p>
+<h3 id="GOTV-の説明"><a href="#GOTV-の説明" class="headerlink" title="GOTV+の説明"></a>GOTV+の説明</h3><p>GOTV+は、HTTPの通信技術と、demのシステムをベースに開発されたAPIです。<br>通常のホームページをホストするようなソフトウェア(NodeJS,GoLANG)を使いホストする事が出来るので<br>多人数から同時に接続されても安定して処理が可能です。(問題1,2解決)<br>また、GOTV+はCDNというHTTP通信のキャッシュ技術を活用することで、世界中どのような場所に居ても安定した通信を行うことが出来ます(GoogleやTwitchがどこからアクセスしても高速で、同じコンテンツを保持しているのと同じような感じです)。<br>これにより、問題3も解決されています。</p>
 <p>サーバーオーナーは試合用サーバーに設定コマンドを入力し、GOTV+のソフトウェアの立ち上げ・ポート開放を行うだけでGOTV+をホストすることが出来ます。<br>サーバーは設定されたコマンドを基に、GOTV+ソフトウェアにdemファイルの断片を3秒ごとに送り続けます。<br>GOTV+は、この断片をCSGOクライアントが取得出来るようにし、少しずつdemを繋げるようにして再生を行います。</p>
 <h4 id="GOTVのメリット"><a href="#GOTVのメリット" class="headerlink" title="GOTVのメリット"></a>GOTVのメリット</h4><p>GOTV+がどのような物かわかったところで、どのような利点があるのか説明していきます。</p>
 <ol>
@@ -127,7 +127,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://tech.utage-csgo.com/2019/06/06/gotv-plus/" data-id="cjwnmcx2k00003khrs45smd65" class="article-share-link">Share</a>
+      <a data-url="http://tech.utage-csgo.com/2019/06/06/gotv-plus/" data-id="cjwrlt3oe0003m0hrxboevnbi" class="article-share-link">Share</a>
       
       
     </footer>
@@ -136,10 +136,19 @@
     
 <nav id="article-nav">
   
+    <a href="/2019/06/06/utage-broadcast/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          UTAGE BROADCASTについて
+        
+      </div>
+    </a>
   
-    <a href="/2019/06/06/utage-broadcast/" id="article-nav-older" class="article-nav-link-wrap">
+  
+    <a href="/2019/06/01/welcome/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">UTAGE BROADCASTについて</div>
+      <div class="article-nav-title">Welcome!</div>
     </a>
   
 </nav>
@@ -176,11 +185,15 @@
       <ul>
         
           <li>
-            <a href="/2019/06/06/gotv-plus/">GOTV+について</a>
+            <a href="/2019/06/11/SourceModとは/">SourceModとは?</a>
           </li>
         
           <li>
             <a href="/2019/06/06/utage-broadcast/">UTAGE BROADCASTについて</a>
+          </li>
+        
+          <li>
+            <a href="/2019/06/06/gotv-plus/">GOTV+について</a>
           </li>
         
           <li>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>SourceModとは? | UTAGE-Tech</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="こんにちは！EruFFA AdminのEruです。皆さんはUTAGEの試合を見たことはありますか？チャット欄に出てくる試合の情報や試合を円滑に進めるためにSourceModというサードパーティ制のサーバーアドオンが使用されています。今回はこのSourceModというサードパーティ制のアドオンの入れ方からプラグインの作り方まで順を追って紹介してみたいと思います。 SourceModとはSourceM">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SourceModとは?">
+<meta property="og:url" content="http://tech.utage-csgo.com/2019/06/11/SourceModとは/index.html">
+<meta property="og:site_name" content="UTAGE-Tech">
+<meta property="og:description" content="こんにちは！EruFFA AdminのEruです。皆さんはUTAGEの試合を見たことはありますか？チャット欄に出てくる試合の情報や試合を円滑に進めるためにSourceModというサードパーティ制のサーバーアドオンが使用されています。今回はこのSourceModというサードパーティ制のアドオンの入れ方からプラグインの作り方まで順を追って紹介してみたいと思います。 SourceModとはSourceM">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://i.imgur.com/DZC7rpT.png">
+<meta property="og:image" content="https://i.imgur.com/ak5UQoX.png">
+<meta property="og:image" content="https://i.imgur.com/8MxivM2.png">
+<meta property="og:image" content="https://i.imgur.com/Y77oydw.png">
+<meta property="og:image" content="https://i.imgur.com/ixUpNFj.png">
+<meta property="og:image" content="https://i.imgur.com/IPiq0Av.png">
+<meta property="og:updated_time" content="2019-06-11T09:42:01.607Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SourceModとは?">
+<meta name="twitter:description" content="こんにちは！EruFFA AdminのEruです。皆さんはUTAGEの試合を見たことはありますか？チャット欄に出てくる試合の情報や試合を円滑に進めるためにSourceModというサードパーティ制のサーバーアドオンが使用されています。今回はこのSourceModというサードパーティ制のアドオンの入れ方からプラグインの作り方まで順を追って紹介してみたいと思います。 SourceModとはSourceM">
+<meta name="twitter:image" content="https://i.imgur.com/DZC7rpT.png">
+  
+    <link rel="alternate" href="/atom.xml" title="UTAGE-Tech" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">UTAGE-Tech</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">CSGO Japan League UTAGE Technical Team</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://tech.utage-csgo.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-SourceModとは" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/06/11/SourceModとは/" class="article-date">
+  <time datetime="2019-06-11T09:29:04.944Z" itemprop="datePublished">2019-06-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      SourceModとは?
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>こんにちは！EruFFA AdminのEruです。<br>皆さんはUTAGEの試合を見たことはありますか？<br>チャット欄に出てくる試合の情報や試合を円滑に進めるために<br>SourceModというサードパーティ制のサーバーアドオンが使用されています。<br>今回はこのSourceModというサードパーティ制のアドオンの入れ方からプラグインの作り方まで<br>順を追って紹介してみたいと思います。</p>
+<h2 id="SourceModとは"><a href="#SourceModとは" class="headerlink" title="SourceModとは"></a>SourceModとは</h2><p>SourceModはC++をベースとしたSourceエンジンとSourceSDKを使用して書かれた<br>MODのためのスクリプト言語です。<br>管理システムやコマンド、イベント、コンソール変数、ネットワークメッセージなどをSourceModから<br>拡張できるようにした言語です。</p>
+<p>また、SourceModスクリプトはPawnから派生したSourcePawn言語で書かれています。</p>
+<p>詳しくは<a href="https://wiki.alliedmods.net/SourceMod" target="_blank" rel="noopener">SourceMod Wiki</a>をご覧ください。</p>
+<h3 id="MetaMod導入について"><a href="#MetaMod導入について" class="headerlink" title="MetaMod導入について"></a>MetaMod導入について</h3><p>SourceMod(並びにMetamod)導入について、ここではsteamcmdからのCSGOサーバーのインストール、セットアップは<br>完了しているもののとし、話を進めていきます。</p>
+<p>SourceModはMetamod:Sourceが前提として必要です。<br>まずはMetamod:Sourceをサーバーにインストールしていきます。<br><a href="https://www.metamodsource.net" target="_blank" rel="noopener">Metamod:Source</a>を開き左側のStable Buildsから<br>自分のOSにあったボタンをクリックします。<br>ここではWindows版をダウンロードしました。</p>
+<p><img src="https://i.imgur.com/DZC7rpT.png" alt="I1"></p>
+<p>さらに、ダウンロードしたファイルの中身のaddonsフォルダを<br>CSGOサーバーディレクトリ/csgo/<br>に移動します。<br>(画像ではすでにaddonsフォルダが存在しますが<br>最初からは存在しません。)</p>
+<p><img src="https://i.imgur.com/ak5UQoX.png" alt="I2"></p>
+<p>下記の画像の通り<br>CSGOサーバーディレクトリ/csgo/addons<br>という配置になっていれば成功です。</p>
+<p><img src="https://i.imgur.com/8MxivM2.png" alt="I3"></p>
+<h3 id="SourceMod導入について"><a href="#SourceMod導入について" class="headerlink" title="SourceMod導入について"></a>SourceMod導入について</h3><p>次にSourceModをサーバーにインストールしていきます。<br>まず、<a href="https://www.sourcemod.net" target="_blank" rel="noopener">SourceMod</a>の左側のDownloadsから<br>Stable Buildsをクリックし、自分のOSにあったボタンをクリックします。<br>ここではWindows版をダウンロードしました。</p>
+<p><img src="https://i.imgur.com/Y77oydw.png" alt="K1"></p>
+<p>次にMetaModと同じ要領で、ファイルの中身のフォルダをすべて移動します。<br>CSGOサーバーディレクトリ/csgo/addons<br>CSGOサーバーディレクトリ/csgo/cfg<br>となるように移動します。<br>このときに上書きの確認が出た場合は上書きします。</p>
+<p><img src="https://i.imgur.com/ixUpNFj.png" alt="K2"></p>
+<p>これでSourceMod並びにMetaMod:Sourceのインストールは完了しました。</p>
+<h3 id="確認方法について"><a href="#確認方法について" class="headerlink" title="確認方法について"></a>確認方法について</h3><p>最後にサーバーを起動して、コンソールに<br><code>sm version</code>と打ち、しっかりとインストールされているか<br>確認してください。この際、何も出てこない場合はどこかでインストール工程を飛ばしている、または間違えている可能性があります。<br>正しくインストールされていない場合はプラグインを有効化できません。<br>もう一度最初から確認してください。</p>
+<p><img src="https://i.imgur.com/IPiq0Av.png" alt="L1"></p>
+<h3 id="最後に"><a href="#最後に" class="headerlink" title="最後に"></a>最後に</h3><p>SourceModはCSGOでサーバーを稼働させるには便利なアドオンですが、<br>プラグインを作成できる人が少なく、日本でもSourceMod/SourcePawnの<br>コミュニティが少ないのが現状です。<br>これらのことから今回の記事を作成しています。<br>もし、興味を持ってもらえたら次の記事でもお会いしましょう！<br>以上、EruによるSourceModの導入方法の説明でした！</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://tech.utage-csgo.com/2019/06/11/SourceModとは/" data-id="cjwrlt3o20001m0hrmx4mdsl5" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/06/06/utage-broadcast/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">UTAGE BROADCASTについて</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/06/11/SourceModとは/">SourceModとは?</a>
+          </li>
+        
+          <li>
+            <a href="/2019/06/06/utage-broadcast/">UTAGE BROADCASTについて</a>
+          </li>
+        
+          <li>
+            <a href="/2019/06/06/gotv-plus/">GOTV+について</a>
+          </li>
+        
+          <li>
+            <a href="/2019/06/01/welcome/">Welcome!</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 FlowingSPDG<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

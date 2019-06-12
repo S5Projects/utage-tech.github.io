@@ -7,17 +7,17 @@
   
   <title>UTAGE BROADCASTについて | UTAGE-Tech</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="こんにちは！テクニカルエンジニアのFlowingです。突然ですが皆さんはUTAGE BROADCSATについてご存知でしょうか？このサービスはUTAGEの予選試合を自動的にTwitch.tvへ配信するサービスです。ミラー配信も許可しているため、一か月に行われる宴の試合を簡単に観戦・実況することが出来ます！ 今回は、このサービスの構成・仕組みや、技術的な部分について説明して行こうと思います。 企画段">
+  <meta name="description" content="こんにちは！テクニカルエンジニアのFlowingです。突然ですが皆さんはUTAGE BROADCASTについてご存知でしょうか？このサービスはUTAGEの予選試合を自動的にTwitch.tvへ配信するサービスです。ミラー配信も許可しているため、一か月に行われる宴の試合を簡単に観戦・実況することが出来ます！ 今回は、このサービスの構成・仕組みや、技術的な部分について説明して行こうと思います。 企画段">
 <meta property="og:type" content="article">
 <meta property="og:title" content="UTAGE BROADCASTについて">
 <meta property="og:url" content="http://tech.utage-csgo.com/2019/06/06/utage-broadcast/index.html">
 <meta property="og:site_name" content="UTAGE-Tech">
-<meta property="og:description" content="こんにちは！テクニカルエンジニアのFlowingです。突然ですが皆さんはUTAGE BROADCSATについてご存知でしょうか？このサービスはUTAGEの予選試合を自動的にTwitch.tvへ配信するサービスです。ミラー配信も許可しているため、一か月に行われる宴の試合を簡単に観戦・実況することが出来ます！ 今回は、このサービスの構成・仕組みや、技術的な部分について説明して行こうと思います。 企画段">
+<meta property="og:description" content="こんにちは！テクニカルエンジニアのFlowingです。突然ですが皆さんはUTAGE BROADCASTについてご存知でしょうか？このサービスはUTAGEの予選試合を自動的にTwitch.tvへ配信するサービスです。ミラー配信も許可しているため、一か月に行われる宴の試合を簡単に観戦・実況することが出来ます！ 今回は、このサービスの構成・仕組みや、技術的な部分について説明して行こうと思います。 企画段">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-06T09:06:43.027Z">
+<meta property="og:updated_time" content="2019-06-12T09:56:26.353Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="UTAGE BROADCASTについて">
-<meta name="twitter:description" content="こんにちは！テクニカルエンジニアのFlowingです。突然ですが皆さんはUTAGE BROADCSATについてご存知でしょうか？このサービスはUTAGEの予選試合を自動的にTwitch.tvへ配信するサービスです。ミラー配信も許可しているため、一か月に行われる宴の試合を簡単に観戦・実況することが出来ます！ 今回は、このサービスの構成・仕組みや、技術的な部分について説明して行こうと思います。 企画段">
+<meta name="twitter:description" content="こんにちは！テクニカルエンジニアのFlowingです。突然ですが皆さんはUTAGE BROADCASTについてご存知でしょうか？このサービスはUTAGEの予選試合を自動的にTwitch.tvへ配信するサービスです。ミラー配信も許可しているため、一か月に行われる宴の試合を簡単に観戦・実況することが出来ます！ 今回は、このサービスの構成・仕組みや、技術的な部分について説明して行こうと思います。 企画段">
   
     <link rel="alternate" href="/atom.xml" title="UTAGE-Tech" type="application/atom+xml">
   
@@ -90,14 +90,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>こんにちは！テクニカルエンジニアのFlowingです。<br>突然ですが皆さんは<a href="https://twitch.tv/utage_broadcast/" target="_blank" rel="noopener">UTAGE BROADCSAT</a>についてご存知でしょうか？<br>このサービスはUTAGEの予選試合を自動的に<a href="https://twitch.tv/" target="_blank" rel="noopener">Twitch.tv</a>へ配信するサービスです。<br>ミラー配信も許可しているため、一か月に行われる宴の試合を簡単に観戦・実況することが出来ます！</p>
+        <p>こんにちは！テクニカルエンジニアのFlowingです。<br>突然ですが皆さんは<a href="https://twitch.tv/utage_broadcast/" target="_blank" rel="noopener">UTAGE BROADCAST</a>についてご存知でしょうか？<br>このサービスはUTAGEの予選試合を自動的に<a href="https://twitch.tv/" target="_blank" rel="noopener">Twitch.tv</a>へ配信するサービスです。<br>ミラー配信も許可しているため、一か月に行われる宴の試合を簡単に観戦・実況することが出来ます！</p>
 <p>今回は、このサービスの構成・仕組みや、技術的な部分について説明して行こうと思います。</p>
-<h3 id="企画段階"><a href="#企画段階" class="headerlink" title="企画段階"></a>企画段階</h3><p>UTAGE BROADCASTは、数あるUTAGEの予選を誰でも簡単に観戦でき、ミラー配信を行えるシステムとして開発しました。<br>その為手動での操作を可能な限り省き、メイン部分である配信ソフトウェアの操作・CSGOサーバーへの接続は全て全自動で行えるよう構成しました。<br>そのため、これまで手動で行っていた作業をどこまで自動化出来るかが構築時の焦点となりました。</p>
+<h3 id="企画段階"><a href="#企画段階" class="headerlink" title="企画段階"></a>企画段階</h3><p>UTAGE BROADCASTは、数あるUTAGEの予選を誰でも簡単に観戦でき、ミラー配信を行えるシステムとして開発しました。<br>その為手動での操作を可能な限り省き、メイン部分である配信ソフトウェアの操作・CSGOサーバーへの接続は<br>全て全自動で行えるよう構成しました。<br>そのため、これまで手動で行っていた作業をどこまで自動化出来るかが構築時の焦点となりました。</p>
 <h3 id="構成"><a href="#構成" class="headerlink" title="構成"></a>構成</h3><p>バックエンド部分はTypeScript(NodeJS)で記述してあります。<br>最初は純正NodeJSで記述していたのですが、実行時エラーが発生すると配信垂れ流しになってしまう危険性を孕んでいた為、事前コンパイルがあるTypeScriptを選びました。<br>フロントエンドはjQueryで記述してありますが、フロントエンドは後述する”Project Talos”の時しか公開していないので実質サービスの根幹には関わっていないと考えて構いません。</p>
 <p>バックエンド側の処理としては、NodeJSに備わっているexpressモジュールを使いHTTPサーバーを立ち上げ、REST API経由で様々な操作を行えます。<br>CSGO側の状況確認は<a href="https://developer.valvesoftware.com/wiki/Counter-Strike:_Global_Offensive_Game_State_Integration" target="_blank" rel="noopener">GameStateIntegration</a>(以下GSI)とexpressを使い、CSGOへのコマンド送信は<a href="https://github.com/advancedfx/advancedfx" target="_blank" rel="noopener">HLAE</a>のコマンドとwebsocketサーバーをを活用する事で実装しています。<br>配信ソフトへの操作制御は、<a href="https://github.com/Palakis/obs-websocket" target="_blank" rel="noopener">obs-websocket</a>,<a href="https://github.com/haganbmj/obs-websocket-js" target="_blank" rel="noopener">obs-websocket-js</a>を使っています。<br>因みにvmixの方がREST APIが使える為より直感的に操作を行えそうな印象はあったのですが、コストの関係もありOBSに落ち着きました。</p>
 <p>上記三つの技術を組み合わせ、「buytimeになったらエフェクト作動」や、「warmup時はシーンを変える」などの制御を行っています。</p>
 <p>構築自体はは約二週間程度で動くレベルまで到達しました(その後Twitchチャンネルの取得・試運転などを入れると本番運用までは一か月程度かかりました)。</p>
-<h3 id="構築"><a href="#構築" class="headerlink" title="構築"></a>構築</h3><p>試合サーバーののホスティングサービスである”Project Hypnos”のコードを少し改造し、サーバー起動時にHTTPリクエストを送れるようにしました。(Hypnosの技術説明記事もいつか公開します。お楽しみに！)<br>また、REST APIを公開するのはセキュリティ面に不安があった為、上記HypnosとUTAGE BROADCASTを同一PCに共存させ、localhost経由でRESTを叩けるようにしました。</p>
+<h3 id="構築"><a href="#構築" class="headerlink" title="構築"></a>構築</h3><p>試合サーバーののホスティングサービスである”Project Hypnos”のコードを少し改造し<br>サーバー起動時にHTTPリクエストを送れるようにしました。(Hypnosの技術説明記事もいつか公開します。お楽しみに！)<br>また、REST APIを公開するのはセキュリティ面に不安があった為<br>上記HypnosとUTAGE BROADCASTを同一PCに共存させ、localhost経由でRESTを叩けるようにしました。</p>
 <p>各ソフトウェアが踏む手順としては以下の通りです。</p>
 <ol>
 <li>ユーザーが”.create-get5”と発言し、Hypnosがサーバー作成準備に入る。</li>
@@ -108,7 +108,7 @@
 <li>試合終了を検知すると自動的にCSGOがシャットダウンされ、配信が終了する。</li>
 </ol>
 <p>以上がおおまかな流れです。</p>
-<h3 id="リリース"><a href="#リリース" class="headerlink" title="リリース"></a>リリース</h3><p>リリースする前に、”Project Talos”という名前で、オンラインでdemoを見れるサービスという体でサービスを仮公開しました。<br>これはngrok.io 経由でdemファイルをアップロードし、アップロードを検知したらdemファイルを再生するごく簡単なシステムです。<br>メイン部分(CSGO・配信ソフトの制御)は殆ど書き換える必要なく使いまわせたため、このサービスをUTAGE BROADCASTのベータ版として仮運用することにしました。</p>
+<h3 id="リリース"><a href="#リリース" class="headerlink" title="リリース"></a>リリース</h3><p>リリースする前に、”Project Talos”という名前で、オンラインでdemoを見れるサービスを仮公開しました。<br>これはngrok.io 経由でdemファイルをアップロードし、アップロードを検知したらdemファイルを再生するごく簡単なシステムです。<br>メイン部分(CSGO・配信ソフトの制御)は殆ど書き換える必要なく使いまわせたため、このサービスをUTAGE BROADCASTのベータ版として仮運用することにしました。</p>
 <p>予選開始期間一週間前になり、前述した”Project Talos”ではなく、直接GOTVの試合を配信できるサービスをして”UTAGE BROADCAST”の発表・仮運用を開始しました。<br>これはUTAGE Discordの鯖レンタルチャンネルから起動されたGOTVを自動的に観戦するサービスです(これは告知が前後した関係と、戦術のリークにより不評を招いた為、想定よりも早くテストを終了しました)。</p>
 <p>予選開始一日目にはサーバートラブルがありうまく作動しませんでしたが、2日目には通常通り稼働していました。</p>
 <h3 id="まとめ"><a href="#まとめ" class="headerlink" title="まとめ?"></a>まとめ?</h3><p>以上がUTAGE BROADCASTのおおまかな技術説明です。<br>技術関連の記事を書くのは初めてなので拙い部分もあると思いますが何か役に立てれば幸いです！<br>良かったら”<a href="https://twitch.tv/utage_broadcast/" target="_blank" rel="noopener">UTAGE BROADCAST</a>“、使って頂けたら嬉しいです。<br>以上、<a href="https://twitter.com/FlowingSPDG" target="_blank" rel="noopener">FlowingSPDG</a>によるUTAGE BROADCASTの技術説明でした！</p>
@@ -117,7 +117,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://tech.utage-csgo.com/2019/06/06/utage-broadcast/" data-id="cjwnmcx2p00023khrhpvyxp9k" class="article-share-link">Share</a>
+      <a data-url="http://tech.utage-csgo.com/2019/06/06/utage-broadcast/" data-id="cjwrlt3o50002m0hrdtyfx52u" class="article-share-link">Share</a>
       
       
     </footer>
@@ -126,19 +126,19 @@
     
 <nav id="article-nav">
   
-    <a href="/2019/06/06/gotv-plus/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/06/11/SourceModとは/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          GOTV+について
+          SourceModとは?
         
       </div>
     </a>
   
   
-    <a href="/2019/06/01/welcome/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2019/06/06/gotv-plus/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Welcome!</div>
+      <div class="article-nav-title">GOTV+について</div>
     </a>
   
 </nav>
@@ -175,11 +175,15 @@
       <ul>
         
           <li>
-            <a href="/2019/06/06/gotv-plus/">GOTV+について</a>
+            <a href="/2019/06/11/SourceModとは/">SourceModとは?</a>
           </li>
         
           <li>
             <a href="/2019/06/06/utage-broadcast/">UTAGE BROADCASTについて</a>
+          </li>
+        
+          <li>
+            <a href="/2019/06/06/gotv-plus/">GOTV+について</a>
           </li>
         
           <li>

@@ -69,10 +69,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-gotv-plus" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-SourceModとは" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/06/06/gotv-plus/" class="article-date">
-  <time datetime="2019-06-06T08:52:36.000Z" itemprop="datePublished">2019-06-06</time>
+    <a href="/2019/06/11/SourceModとは/" class="article-date">
+  <time datetime="2019-06-11T09:29:04.944Z" itemprop="datePublished">2019-06-11</time>
 </a>
     
   </div>
@@ -83,7 +83,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/06/gotv-plus/">GOTV+について</a>
+      <a class="article-title" href="/2019/06/11/SourceModとは/">SourceModとは?</a>
     </h1>
   
 
@@ -91,44 +91,30 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>こんにちは！テクニカルエンジニアのFlowingです。<br>皆さんはメジャー大会のGOTVを見た事がありますか？<br>実は、メジャー大会のGOTVは通常のGOTVではなく、GOTV+(Official GOTV+)という特別なGOTVが使われています。<br>今回これを公開し、誰でも使えるようにしたバージョンを用意したので、簡単に説明して見ようと思います。</p>
-<h3 id="純正GOTVの説明"><a href="#純正GOTVの説明" class="headerlink" title="純正GOTVの説明"></a>純正GOTVの説明</h3><p>始めに、GOTVはゲームサーバー内の情報を、一定の遅延と共に観戦者に届けるシステムです。<br>これを利用することで、ゴースティングや外部からの干渉を防ぎ、プレイヤーに影響を与えず観戦を行うことが出来ます。<br>ただこのGOTVにはいくつか問題点があります。</p>
-<ol>
-<li><p>サーバーが重くなる<br>一つ目の問題は、大人数の観戦者が繋ぐとサーバーが重くなることがある事です。<br>サーバーのスペックが良ければ抑制することは出来ますが、完全にラグを消すことは難しく、一定のパフォーマンスを失います。</p>
-</li>
-<li><p>最大人数が64人<br>二つ目の問題は、最大人数が64人です。<br>コミュニティ大会規模であれば問題はありませんが、メジャー大会など数万人が観戦するレベルになるとこれはどう頑張っても収容しきれません。<br>これを解決する為に<code>tv_relay</code>というリレーコマンドがありますが、それを用いても最大人数は64-1人をネズミ算式にしか増やすことが出来ず、更にリレーサーバー自体も一つのサーバーなのでコストパフォーマンスが良くありません。</p>
-</li>
-<li><p>回線がシビア<br>三つ目の問題は、同じく通常のゲームサーバーと同じくUDPプロトコルを使用している為パケットロスが発生しやすいです。<br>またVPNなどを利用しても、ヨーロッパ圏など遠隔地のパケットはどうしてもロスが発生してしまい、スムーズに観戦することが出来ません。(2014,2015年頃にメジャー大会を観戦した方ならわかるのではないでしょうか？)</p>
-</li>
-</ol>
-<p>これら三つの問題を解決するべく生み出されたのが、GOTV+です。</p>
-<p>これは上記三つの問題を完璧に解決しているシステムです。</p>
-<h3 id="GOTV-の説明"><a href="#GOTV-の説明" class="headerlink" title="GOTV+の説明"></a>GOTV+の説明</h3><p>GOTV+は、HTTPの通信技術と、demのシステムをベースに開発されたAPIです。<br>通常のホームページをホストするようなソフトウェア(NodeJS,GoLANG)を使いホストする事が出来るので、多人数から同時に接続されても安定して処理が可能です。(問題1,2解決)<br>また、GOTV+はCDNというHTTP通信のキャッシュ技術を活用することで、世界中どのような場所に居ても安定した通信を行うことが出来ます(GoogleやTwitchがどこからアクセスしても高速で、同じコンテンツを保持しているのと同じような感じです)。<br>これにより、問題3も解決されています。</p>
-<p>サーバーオーナーは試合用サーバーに設定コマンドを入力し、GOTV+のソフトウェアの立ち上げ・ポート開放を行うだけでGOTV+をホストすることが出来ます。<br>サーバーは設定されたコマンドを基に、GOTV+ソフトウェアにdemファイルの断片を3秒ごとに送り続けます。<br>GOTV+は、この断片をCSGOクライアントが取得出来るようにし、少しずつdemを繋げるようにして再生を行います。</p>
-<h4 id="GOTVのメリット"><a href="#GOTVのメリット" class="headerlink" title="GOTVのメリット"></a>GOTVのメリット</h4><p>GOTV+がどのような物かわかったところで、どのような利点があるのか説明していきます。</p>
-<ol>
-<li>上記した問題1~3が全て解決される(全世界で超大人数が一つの試合を同時に観戦出来る)</li>
-<li>demファイルの断片なので、demoで出来ることが全て出来る(早送り、一時停止、チートコマンド、HLAE/Reshadeの使用)</li>
-<li>リプレイデータを保持する事で、オンライン上で再生出来るdemoとして機能させれる(demをダウンロードせずにリプレイを観戦出来る)</li>
-</ol>
-<p>このようなメリットがあります。<br>1はコミュニティ大会では大事ではありませんが、2は大会演出の向上、3はユーザーに嬉しい機能ですね。</p>
-<h4 id="GOTVのデメリット"><a href="#GOTVのデメリット" class="headerlink" title="GOTVのデメリット"></a>GOTVのデメリット</h4><p>メリットを紹介した所で、デメリットも一緒に解説してみます。</p>
-<ol>
-<li><p>現在のコミュニティ規模で使う意味が薄い<br>現在のコミュニティではそもそもGOTV+を使うほど大きなイベントが無く、観戦もTwitchで行える為不要といえるかもしれません。</p>
-</li>
-<li><p>観戦者の間で時間ズレがある<br>UDPではなくHTTP(TCP)を使用して通信している為、利用者同士で若干のズレが発生します。<br>Twitch.tvを同じタイミングで再生してもズレてしまうとの同じです。<br>その為、リアルタイムで話していたり、2画面並べて使うとズレが気になる場合があります。</p>
-</li>
-<li><p>CDNの設置が面倒<br>前述した通りCDNとうものを使えば全世界で低遅延の観戦を出来ますが、それには相応のコストがかかります。<br>ある程度の設定や技術が必要なので、「全世界で低遅延で観戦する」という利点を生かす場合それなりの手間がかかります。</p>
-</li>
-</ol>
-<p>以上がデメリットです。</p>
-<h3 id="まとめ"><a href="#まとめ" class="headerlink" title="まとめ"></a>まとめ</h3><p>いかがでしょうか？ GOTV+について簡単に纏めてみました。<br>GOTV+のソフトウェアを自作したい方は<a href="https://developer.valvesoftware.com/wiki/Counter-Strike:_Global_Offensive_Broadcast" target="_blank" rel="noopener">Counter-Strike: Global Offensive Broadcast</a>に簡単なAPIリファレンスを確認出来ます。<br>実際に動かしてみたい方は、<a href="https://github.com/theikkila/csgo-broadcast" target="_blank" rel="noopener">NodeJS版</a>,<a href="https://github.com/kunalpowar/csgo-broadcast" target="_blank" rel="noopener">GO言語版</a>,<a href="https://github.com/utage-tech/csgo-broadcast" target="_blank" rel="noopener">TypeScript版</a>がありますので試してみてはいかがでしょうか！<br>以上、<a href="https://twitter.com/FlowingSPDG" target="_blank" rel="noopener">FlowingSPDG</a>によるGOTV+の技術説明でした！</p>
-<h2 id="WE-WANT-YOU"><a href="#WE-WANT-YOU" class="headerlink" title="WE WANT YOU!"></a>WE WANT YOU!</h2><p>UTAGE-Techではエンジニア・デザイナー・ライターを募集中です！<br>興味のある方は flowing[a]utage-csgo.com までメール下さいませ！</p>
+        <p>こんにちは！EruFFA AdminのEruです。<br>皆さんはUTAGEの試合を見たことはありますか？<br>チャット欄に出てくる試合の情報や試合を円滑に進めるために<br>SourceModというサードパーティ制のサーバーアドオンが使用されています。<br>今回はこのSourceModというサードパーティ制のアドオンの入れ方からプラグインの作り方まで<br>順を追って紹介してみたいと思います。</p>
+<h2 id="SourceModとは"><a href="#SourceModとは" class="headerlink" title="SourceModとは"></a>SourceModとは</h2><p>SourceModはC++をベースとしたSourceエンジンとSourceSDKを使用して書かれた<br>MODのためのスクリプト言語です。<br>管理システムやコマンド、イベント、コンソール変数、ネットワークメッセージなどをSourceModから<br>拡張できるようにした言語です。</p>
+<p>また、SourceModスクリプトはPawnから派生したSourcePawn言語で書かれています。</p>
+<p>詳しくは<a href="https://wiki.alliedmods.net/SourceMod" target="_blank" rel="noopener">SourceMod Wiki</a>をご覧ください。</p>
+<h3 id="MetaMod導入について"><a href="#MetaMod導入について" class="headerlink" title="MetaMod導入について"></a>MetaMod導入について</h3><p>SourceMod(並びにMetamod)導入について、ここではsteamcmdからのCSGOサーバーのインストール、セットアップは<br>完了しているもののとし、話を進めていきます。</p>
+<p>SourceModはMetamod:Sourceが前提として必要です。<br>まずはMetamod:Sourceをサーバーにインストールしていきます。<br><a href="https://www.metamodsource.net" target="_blank" rel="noopener">Metamod:Source</a>を開き左側のStable Buildsから<br>自分のOSにあったボタンをクリックします。<br>ここではWindows版をダウンロードしました。</p>
+<p><img src="https://i.imgur.com/DZC7rpT.png" alt="I1"></p>
+<p>さらに、ダウンロードしたファイルの中身のaddonsフォルダを<br>CSGOサーバーディレクトリ/csgo/<br>に移動します。<br>(画像ではすでにaddonsフォルダが存在しますが<br>最初からは存在しません。)</p>
+<p><img src="https://i.imgur.com/ak5UQoX.png" alt="I2"></p>
+<p>下記の画像の通り<br>CSGOサーバーディレクトリ/csgo/addons<br>という配置になっていれば成功です。</p>
+<p><img src="https://i.imgur.com/8MxivM2.png" alt="I3"></p>
+<h3 id="SourceMod導入について"><a href="#SourceMod導入について" class="headerlink" title="SourceMod導入について"></a>SourceMod導入について</h3><p>次にSourceModをサーバーにインストールしていきます。<br>まず、<a href="https://www.sourcemod.net" target="_blank" rel="noopener">SourceMod</a>の左側のDownloadsから<br>Stable Buildsをクリックし、自分のOSにあったボタンをクリックします。<br>ここではWindows版をダウンロードしました。</p>
+<p><img src="https://i.imgur.com/Y77oydw.png" alt="K1"></p>
+<p>次にMetaModと同じ要領で、ファイルの中身のフォルダをすべて移動します。<br>CSGOサーバーディレクトリ/csgo/addons<br>CSGOサーバーディレクトリ/csgo/cfg<br>となるように移動します。<br>このときに上書きの確認が出た場合は上書きします。</p>
+<p><img src="https://i.imgur.com/ixUpNFj.png" alt="K2"></p>
+<p>これでSourceMod並びにMetaMod:Sourceのインストールは完了しました。</p>
+<h3 id="確認方法について"><a href="#確認方法について" class="headerlink" title="確認方法について"></a>確認方法について</h3><p>最後にサーバーを起動して、コンソールに<br><code>sm version</code>と打ち、しっかりとインストールされているか<br>確認してください。この際、何も出てこない場合はどこかでインストール工程を飛ばしている、または間違えている可能性があります。<br>正しくインストールされていない場合はプラグインを有効化できません。<br>もう一度最初から確認してください。</p>
+<p><img src="https://i.imgur.com/IPiq0Av.png" alt="L1"></p>
+<h3 id="最後に"><a href="#最後に" class="headerlink" title="最後に"></a>最後に</h3><p>SourceModはCSGOでサーバーを稼働させるには便利なアドオンですが、<br>プラグインを作成できる人が少なく、日本でもSourceMod/SourcePawnの<br>コミュニティが少ないのが現状です。<br>これらのことから今回の記事を作成しています。<br>もし、興味を持ってもらえたら次の記事でもお会いしましょう！<br>以上、EruによるSourceModの導入方法の説明でした！</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://tech.utage-csgo.com/2019/06/06/gotv-plus/" data-id="cjwnmcx2k00003khrs45smd65" class="article-share-link">Share</a>
+      <a data-url="http://tech.utage-csgo.com/2019/06/11/SourceModとは/" data-id="cjwrlt3o20001m0hrmx4mdsl5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -160,14 +146,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>こんにちは！テクニカルエンジニアのFlowingです。<br>突然ですが皆さんは<a href="https://twitch.tv/utage_broadcast/" target="_blank" rel="noopener">UTAGE BROADCSAT</a>についてご存知でしょうか？<br>このサービスはUTAGEの予選試合を自動的に<a href="https://twitch.tv/" target="_blank" rel="noopener">Twitch.tv</a>へ配信するサービスです。<br>ミラー配信も許可しているため、一か月に行われる宴の試合を簡単に観戦・実況することが出来ます！</p>
+        <p>こんにちは！テクニカルエンジニアのFlowingです。<br>突然ですが皆さんは<a href="https://twitch.tv/utage_broadcast/" target="_blank" rel="noopener">UTAGE BROADCAST</a>についてご存知でしょうか？<br>このサービスはUTAGEの予選試合を自動的に<a href="https://twitch.tv/" target="_blank" rel="noopener">Twitch.tv</a>へ配信するサービスです。<br>ミラー配信も許可しているため、一か月に行われる宴の試合を簡単に観戦・実況することが出来ます！</p>
 <p>今回は、このサービスの構成・仕組みや、技術的な部分について説明して行こうと思います。</p>
-<h3 id="企画段階"><a href="#企画段階" class="headerlink" title="企画段階"></a>企画段階</h3><p>UTAGE BROADCASTは、数あるUTAGEの予選を誰でも簡単に観戦でき、ミラー配信を行えるシステムとして開発しました。<br>その為手動での操作を可能な限り省き、メイン部分である配信ソフトウェアの操作・CSGOサーバーへの接続は全て全自動で行えるよう構成しました。<br>そのため、これまで手動で行っていた作業をどこまで自動化出来るかが構築時の焦点となりました。</p>
+<h3 id="企画段階"><a href="#企画段階" class="headerlink" title="企画段階"></a>企画段階</h3><p>UTAGE BROADCASTは、数あるUTAGEの予選を誰でも簡単に観戦でき、ミラー配信を行えるシステムとして開発しました。<br>その為手動での操作を可能な限り省き、メイン部分である配信ソフトウェアの操作・CSGOサーバーへの接続は<br>全て全自動で行えるよう構成しました。<br>そのため、これまで手動で行っていた作業をどこまで自動化出来るかが構築時の焦点となりました。</p>
 <h3 id="構成"><a href="#構成" class="headerlink" title="構成"></a>構成</h3><p>バックエンド部分はTypeScript(NodeJS)で記述してあります。<br>最初は純正NodeJSで記述していたのですが、実行時エラーが発生すると配信垂れ流しになってしまう危険性を孕んでいた為、事前コンパイルがあるTypeScriptを選びました。<br>フロントエンドはjQueryで記述してありますが、フロントエンドは後述する”Project Talos”の時しか公開していないので実質サービスの根幹には関わっていないと考えて構いません。</p>
 <p>バックエンド側の処理としては、NodeJSに備わっているexpressモジュールを使いHTTPサーバーを立ち上げ、REST API経由で様々な操作を行えます。<br>CSGO側の状況確認は<a href="https://developer.valvesoftware.com/wiki/Counter-Strike:_Global_Offensive_Game_State_Integration" target="_blank" rel="noopener">GameStateIntegration</a>(以下GSI)とexpressを使い、CSGOへのコマンド送信は<a href="https://github.com/advancedfx/advancedfx" target="_blank" rel="noopener">HLAE</a>のコマンドとwebsocketサーバーをを活用する事で実装しています。<br>配信ソフトへの操作制御は、<a href="https://github.com/Palakis/obs-websocket" target="_blank" rel="noopener">obs-websocket</a>,<a href="https://github.com/haganbmj/obs-websocket-js" target="_blank" rel="noopener">obs-websocket-js</a>を使っています。<br>因みにvmixの方がREST APIが使える為より直感的に操作を行えそうな印象はあったのですが、コストの関係もありOBSに落ち着きました。</p>
 <p>上記三つの技術を組み合わせ、「buytimeになったらエフェクト作動」や、「warmup時はシーンを変える」などの制御を行っています。</p>
 <p>構築自体はは約二週間程度で動くレベルまで到達しました(その後Twitchチャンネルの取得・試運転などを入れると本番運用までは一か月程度かかりました)。</p>
-<h3 id="構築"><a href="#構築" class="headerlink" title="構築"></a>構築</h3><p>試合サーバーののホスティングサービスである”Project Hypnos”のコードを少し改造し、サーバー起動時にHTTPリクエストを送れるようにしました。(Hypnosの技術説明記事もいつか公開します。お楽しみに！)<br>また、REST APIを公開するのはセキュリティ面に不安があった為、上記HypnosとUTAGE BROADCASTを同一PCに共存させ、localhost経由でRESTを叩けるようにしました。</p>
+<h3 id="構築"><a href="#構築" class="headerlink" title="構築"></a>構築</h3><p>試合サーバーののホスティングサービスである”Project Hypnos”のコードを少し改造し<br>サーバー起動時にHTTPリクエストを送れるようにしました。(Hypnosの技術説明記事もいつか公開します。お楽しみに！)<br>また、REST APIを公開するのはセキュリティ面に不安があった為<br>上記HypnosとUTAGE BROADCASTを同一PCに共存させ、localhost経由でRESTを叩けるようにしました。</p>
 <p>各ソフトウェアが踏む手順としては以下の通りです。</p>
 <ol>
 <li>ユーザーが”.create-get5”と発言し、Hypnosがサーバー作成準備に入る。</li>
@@ -178,7 +164,7 @@
 <li>試合終了を検知すると自動的にCSGOがシャットダウンされ、配信が終了する。</li>
 </ol>
 <p>以上がおおまかな流れです。</p>
-<h3 id="リリース"><a href="#リリース" class="headerlink" title="リリース"></a>リリース</h3><p>リリースする前に、”Project Talos”という名前で、オンラインでdemoを見れるサービスという体でサービスを仮公開しました。<br>これはngrok.io 経由でdemファイルをアップロードし、アップロードを検知したらdemファイルを再生するごく簡単なシステムです。<br>メイン部分(CSGO・配信ソフトの制御)は殆ど書き換える必要なく使いまわせたため、このサービスをUTAGE BROADCASTのベータ版として仮運用することにしました。</p>
+<h3 id="リリース"><a href="#リリース" class="headerlink" title="リリース"></a>リリース</h3><p>リリースする前に、”Project Talos”という名前で、オンラインでdemoを見れるサービスを仮公開しました。<br>これはngrok.io 経由でdemファイルをアップロードし、アップロードを検知したらdemファイルを再生するごく簡単なシステムです。<br>メイン部分(CSGO・配信ソフトの制御)は殆ど書き換える必要なく使いまわせたため、このサービスをUTAGE BROADCASTのベータ版として仮運用することにしました。</p>
 <p>予選開始期間一週間前になり、前述した”Project Talos”ではなく、直接GOTVの試合を配信できるサービスをして”UTAGE BROADCAST”の発表・仮運用を開始しました。<br>これはUTAGE Discordの鯖レンタルチャンネルから起動されたGOTVを自動的に観戦するサービスです(これは告知が前後した関係と、戦術のリークにより不評を招いた為、想定よりも早くテストを終了しました)。</p>
 <p>予選開始一日目にはサーバートラブルがありうまく作動しませんでしたが、2日目には通常通り稼働していました。</p>
 <h3 id="まとめ"><a href="#まとめ" class="headerlink" title="まとめ?"></a>まとめ?</h3><p>以上がUTAGE BROADCASTのおおまかな技術説明です。<br>技術関連の記事を書くのは初めてなので拙い部分もあると思いますが何か役に立てれば幸いです！<br>良かったら”<a href="https://twitch.tv/utage_broadcast/" target="_blank" rel="noopener">UTAGE BROADCAST</a>“、使って頂けたら嬉しいです。<br>以上、<a href="https://twitter.com/FlowingSPDG" target="_blank" rel="noopener">FlowingSPDG</a>によるUTAGE BROADCASTの技術説明でした！</p>
@@ -187,7 +173,76 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://tech.utage-csgo.com/2019/06/06/utage-broadcast/" data-id="cjwnmcx2p00023khrhpvyxp9k" class="article-share-link">Share</a>
+      <a data-url="http://tech.utage-csgo.com/2019/06/06/utage-broadcast/" data-id="cjwrlt3o50002m0hrdtyfx52u" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-gotv-plus" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/06/06/gotv-plus/" class="article-date">
+  <time datetime="2019-06-06T08:52:36.000Z" itemprop="datePublished">2019-06-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/06/gotv-plus/">GOTV+について</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>こんにちは！テクニカルエンジニアのFlowingです。<br>皆さんはメジャー大会のGOTVを見た事がありますか？<br>実は、メジャー大会のGOTVは通常のGOTVではなく、GOTV+(Official GOTV+)という特別なGOTVが使われています。<br>今回これを公開し、誰でも使えるようにしたバージョンを用意したので、簡単に説明して見ようと思います。</p>
+<h3 id="純正GOTVの説明"><a href="#純正GOTVの説明" class="headerlink" title="純正GOTVの説明"></a>純正GOTVの説明</h3><p>始めに、GOTVはゲームサーバー内の情報を、一定の遅延と共に観戦者に届けるシステムです。<br>これを利用することで、ゴースティングや外部からの干渉を防ぎ、プレイヤーに影響を与えず観戦を行うことが出来ます。<br>ただこのGOTVにはいくつか問題点があります。</p>
+<ol>
+<li><p>サーバーが重くなる<br>一つ目の問題は、大人数の観戦者が繋ぐとサーバーが重くなることがある事です。<br>サーバーのスペックが良ければ抑制することは出来ますが、完全にラグを消すことは難しく、一定のパフォーマンスを失います。</p>
+</li>
+<li><p>最大人数が64人<br>二つ目の問題は、最大人数が64人です。<br>コミュニティ大会規模であれば問題はありませんが<br>メジャー大会など数万人が観戦するレベルになるとこれはどう頑張っても収容しきれません。<br>これを解決する為に<code>tv_relay</code>というリレーコマンドがありますが<br>それを用いても最大人数は64-1人をネズミ算式にしか増やすことが出来ず、更にリレーサーバー自体も一つのサーバーなのでコストパフォーマンスが良くありません。</p>
+</li>
+<li><p>回線がシビア<br>三つ目の問題は、同じく通常のゲームサーバーと同じく<br>UDPプロトコルを使用している為パケットロスが発生しやすいです。<br>またVPNなどを利用しても、ヨーロッパ圏など遠隔地のパケットはどうしてもロスが発生してしまい、スムーズに観戦することが出来ません。(2014,2015年頃にメジャー大会を観戦した方ならわかるのではないでしょうか？)</p>
+</li>
+</ol>
+<p>これら三つの問題を解決するべく生み出されたのが、GOTV+です。</p>
+<p>これは上記三つの問題を完璧に解決しているシステムです。</p>
+<h3 id="GOTV-の説明"><a href="#GOTV-の説明" class="headerlink" title="GOTV+の説明"></a>GOTV+の説明</h3><p>GOTV+は、HTTPの通信技術と、demのシステムをベースに開発されたAPIです。<br>通常のホームページをホストするようなソフトウェア(NodeJS,GoLANG)を使いホストする事が出来るので<br>多人数から同時に接続されても安定して処理が可能です。(問題1,2解決)<br>また、GOTV+はCDNというHTTP通信のキャッシュ技術を活用することで、世界中どのような場所に居ても安定した通信を行うことが出来ます(GoogleやTwitchがどこからアクセスしても高速で、同じコンテンツを保持しているのと同じような感じです)。<br>これにより、問題3も解決されています。</p>
+<p>サーバーオーナーは試合用サーバーに設定コマンドを入力し、GOTV+のソフトウェアの立ち上げ・ポート開放を行うだけでGOTV+をホストすることが出来ます。<br>サーバーは設定されたコマンドを基に、GOTV+ソフトウェアにdemファイルの断片を3秒ごとに送り続けます。<br>GOTV+は、この断片をCSGOクライアントが取得出来るようにし、少しずつdemを繋げるようにして再生を行います。</p>
+<h4 id="GOTVのメリット"><a href="#GOTVのメリット" class="headerlink" title="GOTVのメリット"></a>GOTVのメリット</h4><p>GOTV+がどのような物かわかったところで、どのような利点があるのか説明していきます。</p>
+<ol>
+<li>上記した問題1~3が全て解決される(全世界で超大人数が一つの試合を同時に観戦出来る)</li>
+<li>demファイルの断片なので、demoで出来ることが全て出来る(早送り、一時停止、チートコマンド、HLAE/Reshadeの使用)</li>
+<li>リプレイデータを保持する事で、オンライン上で再生出来るdemoとして機能させれる(demをダウンロードせずにリプレイを観戦出来る)</li>
+</ol>
+<p>このようなメリットがあります。<br>1はコミュニティ大会では大事ではありませんが、2は大会演出の向上、3はユーザーに嬉しい機能ですね。</p>
+<h4 id="GOTVのデメリット"><a href="#GOTVのデメリット" class="headerlink" title="GOTVのデメリット"></a>GOTVのデメリット</h4><p>メリットを紹介した所で、デメリットも一緒に解説してみます。</p>
+<ol>
+<li><p>現在のコミュニティ規模で使う意味が薄い<br>現在のコミュニティではそもそもGOTV+を使うほど大きなイベントが無く、観戦もTwitchで行える為不要といえるかもしれません。</p>
+</li>
+<li><p>観戦者の間で時間ズレがある<br>UDPではなくHTTP(TCP)を使用して通信している為、利用者同士で若干のズレが発生します。<br>Twitch.tvを同じタイミングで再生してもズレてしまうとの同じです。<br>その為、リアルタイムで話していたり、2画面並べて使うとズレが気になる場合があります。</p>
+</li>
+<li><p>CDNの設置が面倒<br>前述した通りCDNとうものを使えば全世界で低遅延の観戦を出来ますが、それには相応のコストがかかります。<br>ある程度の設定や技術が必要なので、「全世界で低遅延で観戦する」という利点を生かす場合それなりの手間がかかります。</p>
+</li>
+</ol>
+<p>以上がデメリットです。</p>
+<h3 id="まとめ"><a href="#まとめ" class="headerlink" title="まとめ"></a>まとめ</h3><p>いかがでしょうか？ GOTV+について簡単に纏めてみました。<br>GOTV+のソフトウェアを自作したい方は<a href="https://developer.valvesoftware.com/wiki/Counter-Strike:_Global_Offensive_Broadcast" target="_blank" rel="noopener">Counter-Strike: Global Offensive Broadcast</a>に簡単なAPIリファレンスを確認出来ます。<br>実際に動かしてみたい方は、<a href="https://github.com/theikkila/csgo-broadcast" target="_blank" rel="noopener">NodeJS版</a>,<a href="https://github.com/kunalpowar/csgo-broadcast" target="_blank" rel="noopener">GO言語版</a>,<a href="https://github.com/utage-tech/csgo-broadcast" target="_blank" rel="noopener">TypeScript版</a>がありますので試してみてはいかがでしょうか！<br>以上、<a href="https://twitter.com/FlowingSPDG" target="_blank" rel="noopener">FlowingSPDG</a>によるGOTV+の技術説明でした！</p>
+<h2 id="WE-WANT-YOU"><a href="#WE-WANT-YOU" class="headerlink" title="WE WANT YOU!"></a>WE WANT YOU!</h2><p>UTAGE-Techではエンジニア・デザイナー・ライターを募集中です！<br>興味のある方は flowing[a]utage-csgo.com までメール下さいませ！</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://tech.utage-csgo.com/2019/06/06/gotv-plus/" data-id="cjwrlt3oe0003m0hrxboevnbi" class="article-share-link">Share</a>
       
       
     </footer>
@@ -226,7 +281,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://tech.utage-csgo.com/2019/06/01/welcome/" data-id="cjwnmcx2n00013khraf7waoc9" class="article-share-link">Share</a>
+      <a data-url="http://tech.utage-csgo.com/2019/06/01/welcome/" data-id="cjwrlt3o00000m0hrxpbmnrw5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -267,11 +322,15 @@
       <ul>
         
           <li>
-            <a href="/2019/06/06/gotv-plus/">GOTV+について</a>
+            <a href="/2019/06/11/SourceModとは/">SourceModとは?</a>
           </li>
         
           <li>
             <a href="/2019/06/06/utage-broadcast/">UTAGE BROADCASTについて</a>
+          </li>
+        
+          <li>
+            <a href="/2019/06/06/gotv-plus/">GOTV+について</a>
           </li>
         
           <li>
